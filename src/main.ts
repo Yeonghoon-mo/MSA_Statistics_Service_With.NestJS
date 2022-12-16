@@ -10,10 +10,10 @@ async function bootstrap() {
   const document: OpenAPIObject = SwaggerModule.createDocument(app, config);
   
   if (process.env.NODE_ENV !== "production") {
-    SwaggerModule.setup("api", app, document);
+    SwaggerModule.setup("swagger-ui.html", app, document);
   }
 
-  await app.listen(3030);
+  await app.listen(80);
 }
 
 bootstrap();
