@@ -21,7 +21,7 @@ RUN wget -q -t3 'https://packages.doppler.com/public/cli/rsa.8004D9FF50437357.ke
     apk add doppler
 
 ENV HISTIGNORE='export DOPPLER_TOKEN*'
-ENV DOPPLER_TOKEN='dp.st.prd.3s5mZSHza05yH1zqGEvfIRIqkzDODxVXtC0kflLc37V'
+ENV DOPPLER_TOKEN='dp.pt.mzBpwS3b7OmbkEZS5K62hBcdubXB4zChitkW5sf1580'
 
 ## application 실행
 EXPOSE 8080

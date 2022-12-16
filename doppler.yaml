@@ -1,0 +1,3 @@
+setup:
+  project: statistics_service
+  config: dev

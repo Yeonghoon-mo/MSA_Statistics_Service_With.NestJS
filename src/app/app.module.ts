@@ -12,11 +12,11 @@ import { AppService } from "./app.service";
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: "mariadb",
-      host: process.env.DB_HOST,
-      port: parseInt(process.env.DB_PORT),
-      username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_DATABASE,
+      host: process.env["DB_HOST"],
+      port: parseInt(process.env["DB_PORT"]),
+      username: process.env["DB_USERNAME"],
+      password: process.env["DB_PASSWORD"],
+      database: process.env["DB_DATABASE"],
       entities: [], //* 만들 테이블 List (각 module에서 feture하는 부분에 작성됨)
       synchronize: false, //! 테이블이 생성되면 그 이후로는 무조건 False
       autoLoadEntities: true, //* 엔티티 자동 로드 (?)
