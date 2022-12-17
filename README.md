@@ -58,7 +58,6 @@ https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 - 국가별 사용자 통계 기능 추가
 - 각 기능 별 합계 & 통계 기능 추가
 
-
 > #### 3주차 (2022/11/21 ~ 2022/11/28)
 - Swagger API 문서 작성
 - 합계 & 통계를 하나의 API로 모든 기능들의 결과를 확인할 수 있는 API 작성
@@ -69,13 +68,12 @@ https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 -------------------------------
 - ERD 다이어그램 모델링 툴은 ERDCloud를 사용하였음.
 - 효율적인 개발 속도를 위하여 FK(외래키)는 제약조건에 추가하지 않았음.
-
 ![스크린샷 2022-12-17 17 04 32](https://user-images.githubusercontent.com/54883318/208232237-222d9704-442d-407d-9648-0098f5c407fa.png)
 
 ## 6. Package layer
 -------------------------------
-- MVC 패턴으로 구현 하였음.
-
+- MVC 패턴으로 구현하였음.
+![스크린샷 2022-12-17 19 18 22](https://user-images.githubusercontent.com/54883318/208237065-f8bf4291-8401-401a-9e39-32677be257f2.png)
 
 ## 7. Functional Specification
 -------------------------------
@@ -168,4 +166,4 @@ https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 
 [CronMaker](http://www.cronmaker.com/;jsessionid=node01wk30ioeetbsg15oo4c4531aun65736.node0?0)
 
-### 읽어주셔서 감사드립니다. <br> 피드백&질의사항이 있으실 시 970709m@gmail.com 으로 메일주시면 감사하겠습니다.
+### 읽어주셔서 감사드립니다. <br> 피드백 & 질의사항이 있으실 시 970709m@gmail.com 으로 메일주시면 감사하겠습니다.
