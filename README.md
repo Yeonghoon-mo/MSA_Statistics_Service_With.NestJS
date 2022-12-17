@@ -158,5 +158,14 @@ https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 ![스크린샷 2022-12-17 19 00 17](https://user-images.githubusercontent.com/54883318/208236473-a271b722-b7bd-437d-9768-fe24d80f3167.png)
 ![스크린샷 2022-12-17 19 02 14](https://user-images.githubusercontent.com/54883318/208236510-e642811d-0591-4631-9957-f2bf0dc9d29b.png)
 
+### 11. Referance
+-------------------------------
+[마이크로서비스 분산DB 조회 설계](https://waspro.tistory.com/724)
 
-## 여기까지 읽어주셔서 감사드립니다. <br> 피드백 & 질의사항이 있으실 시 970709m@gmail.com 으로 메일주시면 감사하겠습니다 !
+[오늘의집 MSA Phase 1. 서비스 구축과 배포 with Mortar - 오늘의집 블로그](https://www.bucketplace.com/post/2021-12-17-msa-phase-1-%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B5%AC%EC%B6%95%EA%B3%BC-%EB%B0%B0%ED%8F%AC-with-mortar/)
+
+[Documentation | NestJS - A progressive Node.js framework](https://docs.nestjs.com/techniques/task-scheduling)
+
+[CronMaker](http://www.cronmaker.com/;jsessionid=node01wk30ioeetbsg15oo4c4531aun65736.node0?0)
+
+### 읽어주셔서 감사드립니다. <br> 피드백&질의사항이 있으실 시 970709m@gmail.com 으로 메일주시면 감사하겠습니다.
