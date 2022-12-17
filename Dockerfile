@@ -19,11 +19,10 @@ COPY --from=builder /app ./
 RUN wget -q -t3 'https://packages.doppler.com/public/cli/rsa.8004D9FF50437357.key' -O /etc/apk/keys/cli@doppler-8004D9FF50437357.rsa.pub && \
     echo 'https://packages.doppler.com/public/cli/alpine/any-version/main' | tee -a /etc/apk/repositories && \
     apk add doppler
-
 ENV HISTIGNORE='export DOPPLER_TOKEN*'
 ENV DOPPLER_TOKEN='dp.pt.mzBpwS3b7OmbkEZS5K62hBcdubXB4zChitkW5sf1580'
 
 ## application 실행
-EXPOSE 8080
+EXPOSE 3000
 
-CMD yarn run start:prod
+CMD yarn run start:dev
