@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  statistics_service_msa:
+    image: statistics_service_msa:latest
+    ports:
+      - 3000:3000
+    # environment:
+    #   - BUILD_ENV=prd
+
+    restart: always
