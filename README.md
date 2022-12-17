@@ -1,5 +1,8 @@
 # 통계 Service MSA Project ( NestJS 개인 프로젝트 )
 
+## Notion 문서 URL 
+https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
+
 ## 0. MSA란?
 ------------------------------
 - Micro Service Architecture 의 줄임말으로써, **각 서비스를 독립적인 서비스**로 연결한 구조를 의미한다.
@@ -38,6 +41,10 @@
 > ### DBMS
 - MariaDB
 
+> ### Tools
+- Docker
+- Doppler
+
 ## 4. 프로젝트 제작 기간 (2022/11/07 ~ 2022/11/25) 총 3주간 실제 작업기간 : 8일
 -------------------------------
 > #### 1주차 (2022/11/07 ~ 2022/11/13)
@@ -60,21 +67,90 @@
 
 ## 5. Entity Relationship Diagram
 -------------------------------
-- ERD 다이어그램 모델링 툴은 ERDCloud를 사용하였습니다.
-- 효율적인 개발 속도를 위하여 FK(외래키)는 제약조건에 추가하지 않았습니다.
+- ERD 다이어그램 모델링 툴은 ERDCloud를 사용하였음.
+- 효율적인 개발 속도를 위하여 FK(외래키)는 제약조건에 추가하지 않았음.
 
 ![스크린샷 2022-12-17 17 04 32](https://user-images.githubusercontent.com/54883318/208232237-222d9704-442d-407d-9648-0098f5c407fa.png)
 
 ## 6. Package layer
 -------------------------------
-- MVC 패턴으로 구현 하였습니다.
+- MVC 패턴으로 구현 하였음.
 
-![스크린샷 2022-12-17 17 07 56](https://user-images.githubusercontent.com/54883318/208232364-a21cde98-a089-4ddb-9f8c-69a00226a9b6.png)
 
-## 7.Project Function Flow
+## 7. Functional Specification
 -------------------------------
-- 각 기능들의 Method가 정상적으로 수행이 될 때, 통계 MSA에 API통신을 하여 Log Table에 해당되는 Log를 저장합니다.
-- 정각 12시에 NestJS Library(Scheduler)를 사용하여 Log Table에 있는 Data를 Content컬럼 조건에 따라 각 기능 Batch Table에 저장합니다.
-- 데이터 저장이 성공적으로 이루어졌을 경우, Analytics Table(Log Table)의 내용을 DELETE 합니다.
-- 
+### 공통사항
+
+- 기간은 당일 기준 **최소 1일 ~** **최대 1년**까지의 통계를 볼 수 있습니다.
+- 데이터는 **저장되어있는 Log를 기준, Batch Process를 사용하여 1일을 주기**로 각 기능의 Batch Table에 **하루동안 쌓인 Log Table의 결과**를 저장합니다.
+
+### 7-1. 신규 사용자 가입 기간별 횟수
+
+- **회원가입 & SNS 첫 로그인 시** 신규 사용자 가입 Log가 DB에 저장됩니다.
+
+### 7-2. 사용자 탈퇴 기간별 횟수
+
+- 해당하는 테이블의 **PK가 삭제되거나 특정 Column의 값이 변경되었을 경우** 사용자 탈퇴 로그가 DB에 저장됩니다. - (삭제 여부나 삭제 시간 체크방법은 ?)
+    - ex ) 삭제 여부 컬럼값이 N → Y & 삭제 시간이 존재하는 경우 등
+
+### 7-3. 사용자의 **기간**별 웹 로그인 **횟수**
+
+- 접속 횟수 Log는 **로그인이 성공적으로 수행이 된 후에** Log Table에 저장됩니다.
+- 중복 체크는 **하루 기준으로** 하며, **유저 DB의 PK**를 사용하여 중복체크를 합니다.
+
+### 7-4. 1, 2, 3번 기능의 기간별 합계
+
+- 1번 기능 Batch Table에서 **사용자가 설정한 기간만큼 연산을 수행한 후 기간별 합계**를 보여줍니다.
+    - 연산 과정은 프로젝트 내 비즈니스 로직에서 수행 예정입니다.
+
+### 7-5. 1, 2, 3번 기능의 기간별 평균
+
+- 4번 기능 명세랑 동일합니다.
+    - End-User가 **설정한 기간의 데이터 Count / 시작일~종료일만큼의 날짜**
+- 반올림은 없으며, 소수점 한자리수까지 보여줍니다.
+
+### 7-6. 국가별 사용자 통계
+
+- 로그인 시, **IP로 접속 국가를 판단하여** 해당하는 국가를 Log Table에 저장합니다.
+- **기간별로 어느 국가에서 접속을 몇번 하였는지** 확인할 수 있습니다.
+- 중복체크는 **하루 기준**으로 하며, **유저 DB의 PK**를 사용하여 중복체크를 하도록 합니다.
+
+## 8. Doppler를 통하여 환경변수 관리하기
+-------------------------------
+### Doppler Tool을 사용한 이유
+1. MSA가 여러개일 경우, 환경변수 설정에 있어서 **개발 시간의 손실이 생길 수 있다 생각하여서 하나의 Tool로 관리하자 생각함.**
+2. **.env 파일의 보안 이슈**가 있다 하여, Doppler 사용을 하기로 최종 결정.
+
+### 8-1. 프로젝트 내 Doppler Install & app.module.ts 구조
+![스크린샷 2022-12-17 17 31 29](https://user-images.githubusercontent.com/54883318/208233315-e7ec7455-acd4-455e-912f-0f98aa896f42.png)
+
+### 8-2. Doppler Secret Key & Package Install Dockerfile에 작성
+![스크린샷 2022-12-17 17 32 45](https://user-images.githubusercontent.com/54883318/208233367-4edc3016-52cd-4ddb-8ad8-5527b1f210a6.png)
+
+### 8-3. Doppler Secrets Key dev(개발서버) & prg(프로덕션) & stg(스테이징)마다 다른 환경변수 전달
+<img width="1225" alt="스크린샷 2022-12-17 17 34 11" src="https://user-images.githubusercontent.com/54883318/208233413-a4e0529c-f5ee-450b-8422-f0e879ee2a0b.png">
+<img width="1197" alt="스크린샷 2022-12-17 17 34 41" src="https://user-images.githubusercontent.com/54883318/208233432-1362b216-3583-4bc1-b8b9-bc4c7846554e.png">
+
+### 8-4. Doppler를 적용하기 위한 CLI Modify
+![스크린샷 2022-12-17 17 54 47](https://user-images.githubusercontent.com/54883318/208234179-e41bd771-a97b-4e4c-8fa7-b58c8deb095f.png)
+
+## 9. Docker
+-------------------------------
+
+1. Image를 생성할 Project로 이동<br>
+![스크린샷 2022-12-17 18 02 33](https://user-images.githubusercontent.com/54883318/208234427-bbd56b95-4137-40c0-b650-5942f1ac00f0.png)
+
+2. Dockerfile Build<br>
+![스크린샷 2022-12-17 18 08 31](https://user-images.githubusercontent.com/54883318/208234641-1de9ee70-07bc-460c-9286-129b43317b0e.png)
+
+3. 생성된 Docker Image<br>
+![스크린샷 2022-12-17 18 09 12](https://user-images.githubusercontent.com/54883318/208234665-1a677409-aa82-4c2d-b5f2-5507db7c4b5b.png)
+
+4. 생성된 Image를 docker-compose.yml 파일을 통하여 간결하게 Docker Container 생성<br>
+![스크린샷 2022-12-17 18 23 32](https://user-images.githubusercontent.com/54883318/208235184-68c0a441-c26b-4725-b7d3-db649da9d881.png)
+<br>(docker-compose.yml파일 코드)
+
+5. Docker Container 실행 & 실행 결과<br>
+![스크린샷 2022-12-17 18 21 53](https://user-images.githubusercontent.com/54883318/208235229-8220f082-2a52-49a8-b525-4e5ed074459e.png)
+
 
