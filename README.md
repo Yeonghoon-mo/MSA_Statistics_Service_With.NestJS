@@ -1,4 +1,4 @@
-# 통계 서비스 MSA 프로젝트 ( NestJS 개인 프로젝트 With. 모영훈)
+# 통계 Service MSA Project ( NestJS 개인 프로젝트 )
 
 ## 0. MSA란?
 ------------------------------
@@ -73,6 +73,8 @@
 
 ## 7.Project Function Flow
 -------------------------------
-- 각 기능들의 Method가 정상적으로 수행이 될 때, 통계 MSA에 API통신을 하여 Analytics Table(Log Table)에 해당되는 Log를 저장합니다.
-- 정각 12시에 
+- 각 기능들의 Method가 정상적으로 수행이 될 때, 통계 MSA에 API통신을 하여 Log Table에 해당되는 Log를 저장합니다.
+- 정각 12시에 NestJS Library(Scheduler)를 사용하여 Log Table에 있는 Data를 Content컬럼 조건에 따라 각 기능 Batch Table에 저장합니다.
+- 데이터 저장이 성공적으로 이루어졌을 경우, Analytics Table(Log Table)의 내용을 DELETE 합니다.
+- 
 
