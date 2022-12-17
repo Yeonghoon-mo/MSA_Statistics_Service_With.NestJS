@@ -137,20 +137,19 @@ https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 ## 9. Docker
 -------------------------------
 
-1. Image를 생성할 Project로 이동<br>
+### 9-1. Image를 생성할 Project로 이동<br>
 ![스크린샷 2022-12-17 18 02 33](https://user-images.githubusercontent.com/54883318/208234427-bbd56b95-4137-40c0-b650-5942f1ac00f0.png)
 
-2. Dockerfile Build<br>
+### 9-2. Dockerfile Build<br>
 ![스크린샷 2022-12-17 18 08 31](https://user-images.githubusercontent.com/54883318/208234641-1de9ee70-07bc-460c-9286-129b43317b0e.png)
 
-3. 생성된 Docker Image<br>
+### 9-3. 생성된 Docker Image<br>
 ![스크린샷 2022-12-17 18 09 12](https://user-images.githubusercontent.com/54883318/208234665-1a677409-aa82-4c2d-b5f2-5507db7c4b5b.png)
 
-4. 생성된 Image를 docker-compose.yml 파일을 통하여 간결하게 Docker Container 생성<br>
+### 9-4. 생성된 Image를 docker-compose.yml 파일을 통하여 간결하게 Docker Container 생성<br>
 ![스크린샷 2022-12-17 18 23 32](https://user-images.githubusercontent.com/54883318/208235184-68c0a441-c26b-4725-b7d3-db649da9d881.png)
 <br>(docker-compose.yml파일 코드)
 
-5. Docker Container 실행 & 실행 결과<br>
+### 9-5. Docker Container 실행 & 실행 결과<br>
 ![스크린샷 2022-12-17 18 21 53](https://user-images.githubusercontent.com/54883318/208235229-8220f082-2a52-49a8-b525-4e5ed074459e.png)
-
 
