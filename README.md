@@ -72,7 +72,9 @@ https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 
 ## 6. Package layer
 -------------------------------
-- MVC 패턴으로 구현하였음.
+- MVC 패턴으로 구현.
+- 각 Module이 Provider를 사용할 수 있도록 Export처리를 전역적으로 해주었음.
+- Module 단위로 Controller와 Provider를 작성하였음. <br>
 ![스크린샷 2022-12-17 19 18 22](https://user-images.githubusercontent.com/54883318/208237065-f8bf4291-8401-401a-9e39-32677be257f2.png)
 
 ## 7. Functional Specification
