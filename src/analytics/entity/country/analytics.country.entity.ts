@@ -12,7 +12,7 @@ export class CountryAnalytics extends BaseEntity {
   @Column({ type: "int", name: "value", comment: "수집된 데이터 개수" })
   value: number;
 
-  @CreateDateColumn({ name: "created_date", comment: "데이터 생성시간" })
+  @CreateDateColumn({ nullable: false, name: "created_date", comment: "데이터 생성시간" })
   createdDate: Date;
 
   @UpdateDateColumn({ nullable: true, name: "modified_date", comment: "데이터 수정시간" })

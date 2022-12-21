@@ -8,7 +8,7 @@ export class UserAnalytics extends BaseEntity {
   @Column({ type: "varchar", name: "user_pk", comment: "사용자ID(PK)" })
   userPk: string;
 
-  @CreateDateColumn({ name: "created_date", comment: "데이터 생성시간" })
+  @CreateDateColumn({ nullable: false, name: "created_date", comment: "데이터 생성시간" })
   createdDate: Date;
 
   @UpdateDateColumn({ nullable: true, name: "modified_date", comment: "데이터 수정시간" })
