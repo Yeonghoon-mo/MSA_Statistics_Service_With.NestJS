@@ -11,7 +11,7 @@ export class Login extends BaseEntity {
   @Column({ type: "varchar", length: 50, name: "log_type", comment: "로그 유형" })
   logType: string;
 
-  @CreateDateColumn({ name: "created_date", comment: "데이터 생성시간" })
+  @CreateDateColumn({ nullable:false, name: "created_date", comment: "데이터 생성시간" })
   createdDate: Date;
 
   @UpdateDateColumn({ name: "last_login_time", comment: "마지막 로그인 시간" })

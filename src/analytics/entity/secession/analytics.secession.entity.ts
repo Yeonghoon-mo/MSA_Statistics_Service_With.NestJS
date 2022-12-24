@@ -12,7 +12,7 @@ export class SecessionAnalytics extends BaseEntity {
   @CreateDateColumn({ nullable: false, name: "created_date", comment: "데이터 생성시간" })
   createdDate: Date;
 
-  @UpdateDateColumn({ name: "modified_date", comment: "데이터 수정시간" })
+  @UpdateDateColumn({ nullable: false, name: "modified_date", comment: "데이터 수정시간" })
   modifiedDate: Date;
 
   @DeleteDateColumn({ nullable: true, name: "deleted_date", comment: "데이터 삭제시간" })
