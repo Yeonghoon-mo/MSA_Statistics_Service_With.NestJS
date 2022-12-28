@@ -30,6 +30,7 @@ import { AnalyticsService } from "./service/analytics.service";
     CountryRepository,
     UserRepository,
     LoginRepository,
+    
   ],
 })
 export class AnalyticsModule {}
