@@ -93,9 +93,9 @@ export class AnalyticsController {
     return await this.analyticsService.findAllUserUsed(analyticsRequest);
   }
 
-//   // ! Batch Test
-//   @Post("/test")
-//   async test() {
-//     return await this.analyticsService.batchInsert();
-//   }
+  // ! Batch Test
+  @Post("/test")
+  async test() {
+    return await this.analyticsService.batchInsert();
+  }
 }
