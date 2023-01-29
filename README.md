@@ -168,4 +168,4 @@ https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 
 [CronMaker](http://www.cronmaker.com/;jsessionid=node01wk30ioeetbsg15oo4c4531aun65736.node0?0)
 
-### 읽어주셔서 감사드립니다. <br> 피드백 & 질의사항이 있으실 시 970709m@gmail.com 으로 메일 주시면 감사하겠습니다.
+### 감사합니다.
