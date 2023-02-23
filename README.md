@@ -1,6 +1,6 @@
 # 통계 Service MSA Project ( NestJS 개인 프로젝트 )
 
-## Project Reference Notion 문서 URL 
+## Project Reference Notion Document URL 
 https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 
 ## 0. MSA란?
