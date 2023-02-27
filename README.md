@@ -16,7 +16,7 @@ https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 ## 1. 통계(Statistics) Service MSA 소개
 ------------------------------
 - **각 API에 대한 문서는 Swagger를 사용하여 작성하였다.**
-- NodeJS의 라이브러리인 **Cron(스프링에서는 Batch와 같다.)**을 통하여 하루가 지나갈 때마다 수집된 정보들을 각 Log Table에 저장함.
+- NodeJS의 라이브러리인 **Cron(스프링에서는 Batch와 같다.)** 을 통하여 하루가 지나갈 때마다 수집된 정보들을 각 Log Table에 저장함.
 - 로그 기록 기간은 **당일 기준 최소 1일 ~ 최대 1년까지의 기록을 볼 수 있다.**
 - 기능은 **총 6가지의 기능**이 있다.
 - **신규 사용자 가입 횟수, 사용자 탈퇴 횟수, 사용자의 웹 로그인 횟수, 국가별 사용자 통계, 각 기능 기간별 합계, 각 기능 기간별 평균** 총 6가지 기능이 존재한다.
@@ -167,5 +167,3 @@ https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 [Documentation | NestJS - A progressive Node.js framework](https://docs.nestjs.com/techniques/task-scheduling)
 
 [CronMaker](http://www.cronmaker.com/;jsessionid=node01wk30ioeetbsg15oo4c4531aun65736.node0?0)
-
-### 감사합니다.
