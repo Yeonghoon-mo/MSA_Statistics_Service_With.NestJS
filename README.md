@@ -67,7 +67,6 @@ https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 ## 5. Entity Relationship Diagram
 -------------------------------
 - ERD 다이어그램 모델링 툴은 ERDCloud를 사용하였음.
-- 효율적인 개발 속도를 위하여 FK(외래키)는 제약조건에 추가하지 않았음.
 ![스크린샷 2022-12-17 17 04 32](https://user-images.githubusercontent.com/54883318/208232237-222d9704-442d-407d-9648-0098f5c407fa.png)
 
 ## 6. Package layer
