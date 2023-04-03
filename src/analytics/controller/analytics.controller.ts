@@ -1,7 +1,15 @@
 import { Controller, Get, Post, Query } from "@nestjs/common";
-import { ApiOperation, ApiQuery, ApiResponse, ApiTags } from "@nestjs/swagger";
+import { ApiGoneResponse, ApiOperation, ApiQuery, ApiResponse, ApiTags } from "@nestjs/swagger";
 import { TYPE } from "src/enum/enum";
-import { FindAllAvgRequest, FindAllSumRequest, FindAllUserRequest, FindOneAvgRequest, FindOneSumRequest, FindUserRequest, FindUserUnusedRequest } from "../DTO/analytics.dto";
+import {
+  FindAllAvgRequest,
+  FindAllSumRequest,
+  FindAllUserRequest,
+  FindOneAvgRequest,
+  FindOneSumRequest,
+  FindUserRequest,
+  FindUserUnusedRequest,
+} from "../DTO/analytics.dto";
 import { AnalyticsService } from "../service/analytics.service";
 
 @ApiTags("애널리틱스 API")

@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { LogRequest, LogRequestLoginTime } from "src/log/DTO/log.dto";
+import { LogRequest } from "src/log/DTO/log.dto";
 import { Repository } from "typeorm";
 import { Log } from "./log.entity";
 

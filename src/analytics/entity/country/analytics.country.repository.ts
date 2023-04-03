@@ -20,7 +20,7 @@ export class CountryRepository {
       .groupBy("log.countryName")
       .getRawMany();
 
-    // forEach Insert
+    // ! forEach Insert
     Object.values(cntData).forEach(async (value) => {
       await this.countryRepository
         .createQueryBuilder("CountryAnalytics")
@@ -35,7 +35,7 @@ export class CountryRepository {
         .execute();
     });
 
-    // for Insert
+    // ! for Insert
     // Insert
     // for (let i = 0; i < cntData.length; i++) {
     //   await this.countryRepository

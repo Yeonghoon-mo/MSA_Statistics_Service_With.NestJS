@@ -1,6 +1,6 @@
 import { HttpException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import { TYPE, TYPEIF } from "src/enum/enum";
 import { Login } from "src/log/entity/login/login.entity";
 import { Repository } from "typeorm";
@@ -78,7 +78,7 @@ export class AnalyticsRepository {
             .andWhere(`${type}.countryName LIKE :countryName`, { countryName: `${analyticsAvgRequest.countryName}` })
             .getRawOne()
         );
-      } else {
+      } else { 
         data.push(this.commonQuery(repository, type, analyticsAvgRequest).getRawOne());
       }
     });
