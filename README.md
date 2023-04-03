@@ -11,12 +11,12 @@ https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 - **재사용성이 용이하다.**
 - **단점**은, 모놀로그식 개발보다 **개발의 난이도가 높으며**, 통신의 장애와 서버 부하 등이 있을 경우 **트랜잭션을 어떻게 유지**할지 결정, 구현이 필요함.
 - **통합 테스트가 어려우며, 실제 운영환경에 대해 배포하는 것**이 쉽지 않음. (단, 기획 단계부터 MSA로 개발하고자 한다면 배포하는 것에 대한 부담이 적어진다)
-- 다른 서비스들과의 연계가 정상적으로 이루어지는지 테스트 과정이 필요함.
+- 다른 서비스들과의 연동이 정상적으로 이루어지는지 테스트 과정이 필요함.
 
 ## 1. 통계(Statistics) Service MSA 소개
 ------------------------------
-- **각 API에 대한 문서는 Swagger를 사용하여 작성하였다.**
-- NodeJS의 라이브러리인 **Cron(스프링에서는 Batch와 같다.)**을 통하여 하루가 지나갈 때마다 수집된 정보들을 각 Log Table에 저장함.
+- **API에 대한 문서는 Swagger를 사용하여 작성하였다.**
+- NodeJS의 라이브러리인 **Cron(스프링에서는 Batch와 같다.)** 을 통하여 하루가 지나갈 때마다 수집된 정보들을 각 Log Table에 저장함.
 - 로그 기록 기간은 **당일 기준 최소 1일 ~ 최대 1년까지의 기록을 볼 수 있다.**
 - 기능은 **총 6가지의 기능**이 있다.
 - **신규 사용자 가입 횟수, 사용자 탈퇴 횟수, 사용자의 웹 로그인 횟수, 국가별 사용자 통계, 각 기능 기간별 합계, 각 기능 기간별 평균** 총 6가지 기능이 존재한다.
@@ -67,7 +67,6 @@ https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 ## 5. Entity Relationship Diagram
 -------------------------------
 - ERD 다이어그램 모델링 툴은 ERDCloud를 사용하였음.
-- 효율적인 개발 속도를 위하여 FK(외래키)는 제약조건에 추가하지 않았음.
 ![스크린샷 2022-12-17 17 04 32](https://user-images.githubusercontent.com/54883318/208232237-222d9704-442d-407d-9648-0098f5c407fa.png)
 
 ## 6. Package layer
@@ -167,5 +166,3 @@ https://www.notion.so/Service-MSA-88cf6b17b494414fa5890332ec181046
 [Documentation | NestJS - A progressive Node.js framework](https://docs.nestjs.com/techniques/task-scheduling)
 
 [CronMaker](http://www.cronmaker.com/;jsessionid=node01wk30ioeetbsg15oo4c4531aun65736.node0?0)
-
-### 감사합니다.
