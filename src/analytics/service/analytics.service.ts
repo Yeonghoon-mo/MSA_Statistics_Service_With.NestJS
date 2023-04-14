@@ -78,7 +78,7 @@ export class AnalyticsService {
   }
 
   //* 전체 유저의 기간 별 누적 접속 횟수
-  async findAllUserUsed(analyticsRequest) {
+  async findAllUserUsed(analyticsRequest: any) {
     this.timePlus(analyticsRequest);
     return this.analyticsRepository.findAllUserUsed(analyticsRequest);
   }
