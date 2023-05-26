@@ -4,7 +4,7 @@ services:
   statistics_service_msa:
     image: statistics_service_msa:latest
     ports:
-      - 3000:3000
+      - 30001:3000
     environment:
       - BUILD_ENV=dev
 
