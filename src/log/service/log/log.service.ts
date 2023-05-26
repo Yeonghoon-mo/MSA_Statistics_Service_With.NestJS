@@ -1,4 +1,4 @@
-import { BadRequestException, HttpException, Injectable } from "@nestjs/common";
+import { HttpException, Injectable } from "@nestjs/common";
 import axios from "axios";
 import * as geoip from "geoip-country";
 import { TYPE } from "../../../enum/enum";
@@ -16,7 +16,7 @@ export class LogService {
 
     if (value === "login") {
       if (logRequest.userPk === undefined) {
-        throw new HttpException("사용자 PK값이 필요합니다.", 403);
+        throw new HttpException("PK값이 필요합니다.", 403);
       }
       this.lastLoginTime(logRequest);
       logRequest.logType = value;
@@ -35,7 +35,7 @@ export class LogService {
     if (await this.logRepository.findByUserId(logRequest.userPk)) {
       throw new HttpException("최종 로그인 시간 업데이트 성공", 202);
     }
-    // IpAddress Get
+    // Local IpAddress Get
     let ipAddress: string;
     await axios.get("https://extreme-ip-lookup.com/json").then((res) => {
       ipAddress = res.data.query;
