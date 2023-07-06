@@ -34,6 +34,7 @@
     "axios": "^0.27.2",
     "browser-env": "^3.3.0",
     "dayjs": "^1.11.5",
+    "doppler": "^1.0.0",
     "geoip-country": "^4.1.19",
     "jQuery": "^1.7.4",
     "moment": "^2.29.4",
