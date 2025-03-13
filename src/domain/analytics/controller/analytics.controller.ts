@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Query } from "@nestjs/common";
-import { ApiGoneResponse, ApiOperation, ApiQuery, ApiResponse, ApiTags } from "@nestjs/swagger";
+import { ApiOperation, ApiQuery, ApiResponse, ApiTags } from "@nestjs/swagger";
 import { TYPE } from "src/enum/enum";
 import {
   FindAllAvgRequest,

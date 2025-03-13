@@ -1,7 +1,8 @@
 import { HttpException, Injectable } from "@nestjs/common";
 import axios from "axios";
 import * as geoip from "geoip-country";
-import { TYPE } from "../../../enum/enum";
+
+import { TYPE } from "src/enum/enum";
 import { LogRequest, LogRequestLoginTime } from "../../../log/DTO/log.dto";
 import { LogRepository } from "../../../log/entity/log/log.repository";
 import { LoginRepository } from "../../../log/entity/login/login.repository";

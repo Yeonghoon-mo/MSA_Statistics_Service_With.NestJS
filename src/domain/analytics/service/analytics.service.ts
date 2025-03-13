@@ -1,15 +1,10 @@
 import { HttpException, Injectable } from "@nestjs/common";
 import { Cron } from "@nestjs/schedule";
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import { TYPE } from "src/enum/enum";
-import { LogRepository } from "src/log/entity/log/log.repository";
-import {
-  FindAllAvgRequest,
-  FindAllSumRequest, FindOneAvgRequest,
-  FindOneSumRequest,
-  FindUserRequest,
-  FindUserUnusedRequest
-} from "../DTO/analytics.dto";
+
+import { LogRepository } from "src/domain/log/entity/log/log.repository";
+import { FindAllAvgRequest, FindAllSumRequest, FindOneAvgRequest, FindOneSumRequest, FindUserRequest, FindUserUnusedRequest } from "../DTO/analytics.dto";
 import { AnalyticsRepository } from "../entity/analytics.repository";
 import { CountryRepository } from "../entity/country/analytics.country.repository";
 import { LoginRepository } from "../entity/login/analytics.login.repository";

@@ -1,5 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { AVGIF } from "../../enum/enum";
+import { AVGIF } from "src/enum/enum";
+
 
 // 부모 클래스
 export class CommonDTO {

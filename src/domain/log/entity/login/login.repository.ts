@@ -1,8 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { LogRequest } from "src/log/DTO/log.dto";
 import { Repository } from "typeorm";
 import { Login } from "./login.entity";
+import { LogRequest } from "src/domain/log/DTO/log.dto";
 
 @Injectable()
 export class LoginRepository {

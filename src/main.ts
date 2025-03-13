@@ -8,7 +8,7 @@ async function bootstrap() {
   // * Swagger Setting
   const config = new DocumentBuilder().setTitle("Statistics MSA").setDescription("The Statistics API Description").setVersion("1.1.0").build();
   const document: OpenAPIObject = SwaggerModule.createDocument(app, config);
-  
+
   if (process.env.NODE_ENV !== "production") {
     SwaggerModule.setup("swagger-ui.html", app, document);
   }

@@ -2,7 +2,6 @@ import { HttpException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import dayjs from "dayjs";
 import { TYPE, TYPEIF } from "src/enum/enum";
-import { Login } from "src/log/entity/login/login.entity";
 import { Repository } from "typeorm";
 import {
   FindAllAvgRequest,
@@ -18,6 +17,7 @@ import { LoginAnalytics } from "./login/analytics.login.entity";
 import { SecessionAnalytics } from "./secession/analytics.secession.entity";
 import { SignupAnalytics } from "./signup/analytics.signup.entity";
 import { UserAnalytics } from "./user/analytics.user.entity";
+import { Login } from "src/domain/log/entity/login/login.entity";
 
 export class AnalyticsRepository {
   constructor(
