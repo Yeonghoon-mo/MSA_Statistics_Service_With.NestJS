@@ -1,8 +1,10 @@
 import { HttpException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import dayjs from "dayjs";
+import * as dayjs from "dayjs";
 import { TYPE, TYPEIF } from "src/enum/enum";
 import { Repository } from "typeorm";
+
+import { Login } from "src/domain/log/entity/login/login.entity";
 import {
   FindAllAvgRequest,
   FindAllSumRequest,
@@ -17,7 +19,6 @@ import { LoginAnalytics } from "./login/analytics.login.entity";
 import { SecessionAnalytics } from "./secession/analytics.secession.entity";
 import { SignupAnalytics } from "./signup/analytics.signup.entity";
 import { UserAnalytics } from "./user/analytics.user.entity";
-import { Login } from "src/domain/log/entity/login/login.entity";
 
 export class AnalyticsRepository {
   constructor(
@@ -78,7 +79,7 @@ export class AnalyticsRepository {
             .andWhere(`${type}.countryName LIKE :countryName`, { countryName: `${analyticsAvgRequest.countryName}` })
             .getRawOne()
         );
-      } else { 
+      } else {
         data.push(this.commonQuery(repository, type, analyticsAvgRequest).getRawOne());
       }
     });

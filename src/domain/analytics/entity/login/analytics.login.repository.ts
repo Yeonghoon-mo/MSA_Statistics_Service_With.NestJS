@@ -1,5 +1,5 @@
 import { InjectRepository } from "@nestjs/typeorm";
-import { Log } from "src/log/entity/log/log.entity";
+import { Log } from "src/domain/log/entity/log/log.entity";
 import { Repository } from "typeorm";
 import { LoginAnalytics } from "./analytics.login.entity";
 

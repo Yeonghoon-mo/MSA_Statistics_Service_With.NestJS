@@ -1,6 +1,6 @@
 import { HttpException, Injectable } from "@nestjs/common";
 import { Cron } from "@nestjs/schedule";
-import dayjs from "dayjs";
+import * as dayjs from "dayjs";
 import { TYPE } from "src/enum/enum";
 
 import { LogRepository } from "src/domain/log/entity/log/log.repository";
@@ -110,7 +110,7 @@ export class AnalyticsService {
     }
 
     if (dayjs(analyticsRequest.lastDate).isBefore(analyticsRequest.firstDate)) {
-      throw new HttpException("firstDate의 값이 lastDate의 값보다 높습니다. 형식을 확인해주세요 :)", 403);
+      throw new HttpException("firstDate의 값이 lastDate의 값보다 높습니다. 형식을 확인해주세요.", 403);
     }
   }
 

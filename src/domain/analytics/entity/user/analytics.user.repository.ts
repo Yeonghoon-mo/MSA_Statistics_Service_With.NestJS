@@ -1,5 +1,5 @@
 import { InjectRepository } from "@nestjs/typeorm";
-import { Log } from "src/log/entity/log/log.entity";
+import { Log } from "src/domain/log/entity/log/log.entity";
 import { IsNull, Not, Repository } from "typeorm";
 import { UserAnalytics } from "./analytics.user.entity";
 
@@ -17,10 +17,9 @@ export class UserRepository {
       .select("user_pk")
       .where({
         userPk: Not(IsNull()),
-        logType: 'login'
+        logType: "login",
       })
       .getRawMany();
-
 
     // Insert
     Object.values(cntData).forEach(async (value) => {
